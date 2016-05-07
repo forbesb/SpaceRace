@@ -1,15 +1,19 @@
 package com.brian.model;
 
+import java.util.UUID;
+
 /**
  * Created by brian on 06/05/16.
  */
 public class Ship {
-    private static final int MAXSPEED = 30;
+    private static final int MAXSPEED = 2;
     private double speed;
     private double direction;
     private int score;
     private int x;
     private int y;
+
+    private UUID ID;
 
     public Ship(){
         this.speed = 0;
@@ -32,8 +36,8 @@ public class Ship {
     }
 
     public void update() {
-        xmov = speed * Math.cos(this.direction);
-        ymov = speed * Math.sin(this.direction);
+        double xmov = speed * Math.cos(this.direction);
+        double ymov = speed * Math.sin(this.direction);
         x += xmov;
         y += ymov;
 
@@ -77,6 +81,15 @@ public class Ship {
 
     public void setY(int y) {
         this.y = y;
+    }
+
+
+    public UUID getID() {
+        return ID;
+    }
+
+    public void setID(UUID ID) {
+        this.ID = ID;
     }
 
 }
