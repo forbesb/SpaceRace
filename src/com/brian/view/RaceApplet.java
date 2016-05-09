@@ -38,7 +38,7 @@ public class RaceApplet extends java.applet.Applet implements Observer {
         gc  = new GameController(game);
 
         gc.addShip(400,200);
-        gc.addShip(200,200);
+        gc.addPlayer(200,200);
         Thread gameThread = new Thread(game);
         gameThread.start();
 

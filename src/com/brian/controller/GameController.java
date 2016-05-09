@@ -24,5 +24,15 @@ public class GameController {
         return id;
     }
 
+    public UUID addPlayer(int x, int y){
+        Ship s = new Ship();
+        s.setX(x);
+        s.setY(y);
+        UUID id = UUID.randomUUID();
+        s.setID(id);
+        this.game.addPlayer(s);
+        return id;
+    }
+
 
 }

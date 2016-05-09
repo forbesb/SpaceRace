@@ -7,8 +7,7 @@ import java.util.UUID;
  */
 public class Ship {
     private static final int MAXSPEED = 2;
-    private double speed;
-    private double direction;
+    private double xspeed, yspeed;
     private int score;
     private int x;
     private int y;
@@ -16,8 +15,8 @@ public class Ship {
     private UUID ID;
 
     public Ship(){
-        this.speed = 0;
-        this.direction = 0;
+        this.xspeed = 0;
+        this.yspeed = 0;
         this.score = 0;
         this.x = 0;
         this.y = 0;
@@ -28,16 +27,10 @@ public class Ship {
         this.speed = ((this.speed + n) > MAXSPEED) ? MAXSPEED : (this.speed + n);
     }
 
-    public void turn(double rads){
-        this.direction += rads;
-        while (this.direction > (2 * Math.PI)){
-            this.direction -= 2 * Math.PI;
-        }
-    }
+
 
     public void update() {
-        double xmov = speed * Math.cos(this.direction);
-        double ymov = speed * Math.sin(this.direction);
+
         x += xmov;
         y += ymov;
 

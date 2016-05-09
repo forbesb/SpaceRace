@@ -18,6 +18,8 @@ public class Game extends Observable implements Runnable{
 
     private boolean running = true;
 
+    private Ship player;
+
     public Game(){
         this.ships = new HashMap<>();
     }
@@ -70,4 +72,16 @@ public class Game extends Observable implements Runnable{
         this.ships = ships;
     }
 
+    public void addPlayer(Ship s) {
+        ships.put(s.getID(), s);
+        this.setPlayer(s);
+    }
+
+    public Ship getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Ship player) {
+        this.player = player;
+    }
 }
